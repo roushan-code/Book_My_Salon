@@ -328,7 +328,7 @@ const Home = () => {
 
         <section className="home-reveal-section home-reveal-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {highlights.map((item) => (
-            <article key={item.id} className="home-reveal-card rounded-2xl bg-white/90 border border-[#dbcab8] p-5 brand-shadow">
+            <article key={item.id} className="home-reveal-card rounded-2xl bg-[#f7f1e8] border border-[#b49777] p-5 brand-shadow">
               <p className="text-[11px] tracking-[0.14em] uppercase text-[#4b6387]">Feature</p>
               <h3 className="mt-2 text-xl font-semibold text-[#2f261e]">{item.title}</h3>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
