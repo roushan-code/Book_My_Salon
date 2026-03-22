@@ -72,41 +72,51 @@ const Header = () => {
                 </Link>
             </div>
 
-            {/* Login/Signup Button */}
-            {!user ? (<Link
-                to="/login"
-                className="flex text-white font-bold bg-[#6f4e37] rounded-[10px] items-center gap-2 hover:bg-[#9a6c4b] cursor-pointer transition-colors px-4 py-2"
-            >
-                Login/SignUp
-            </Link>) : (
-                <div className="flex items-center gap-2">
-                    <div className="relative" ref={dropdownRef}>
-                        <button
-                            type="button"
-                            onClick={() => setOpen((v) => !v)}
-                            className="flex items-center gap-2 cursor-pointer bg-transparent border-0"
-                            aria-haspopup="true"
-                            aria-expanded={open}
-                        >
-                            {user ? (
-                                <img
-                                    src={user.profileUrl}
-                                    alt={user.name || 'User'}
-                                    loading="lazy"
-                                    width={32}
-                                    height={32}
-                                    className="rounded-full"
-                                />
-                            ) : (
-                                <div className="w-8 h-8 rounded-full bg-[#9a6c4b] flex items-center justify-center text-white text-sm">
-                                    <User className="w-4 h-4" />
-                                </div>
-                            )}
-                            <span className="hidden md:inline text-sm font-medium">
-                                {user.name}
-                            </span>
-                            {open ? <ChevronDown className="w-4 h-4 transform rotate-180" /> : <ChevronDown className='w-4 h-4' />}
-                        </button>
+            {/* Hairstyle AI + Auth */}
+            <div className="flex items-center gap-3">
+                <Link
+                    to="/HairStyleAI"
+                    className="hidden sm:flex text-[#2f261e] font-semibold bg-white/80 border border-[#dbcab8] rounded-[10px] items-center gap-2 hover:bg-white cursor-pointer transition-colors px-4 py-2"
+                >
+                    Hairstyle AI
+                </Link>
+
+                {!user ? (
+                    <Link
+                        to="/login"
+                        className="flex text-white font-bold bg-[#6f4e37] rounded-[10px] items-center gap-2 hover:bg-[#9a6c4b] cursor-pointer transition-colors px-4 py-2"
+                    >
+                        Login/SignUp
+                    </Link>
+                ) : (
+                    <div className="flex items-center gap-2">
+                        <div className="relative" ref={dropdownRef}>
+                            <button
+                                type="button"
+                                onClick={() => setOpen((v) => !v)}
+                                className="flex items-center gap-2 cursor-pointer bg-transparent border-0"
+                                aria-haspopup="true"
+                                aria-expanded={open}
+                            >
+                                {user ? (
+                                    <img
+                                        src={user.profileUrl}
+                                        alt={user.name || 'User'}
+                                        loading="lazy"
+                                        width={32}
+                                        height={32}
+                                        className="rounded-full"
+                                    />
+                                ) : (
+                                    <div className="w-8 h-8 rounded-full bg-[#9a6c4b] flex items-center justify-center text-white text-sm">
+                                        <User className="w-4 h-4" />
+                                    </div>
+                                )}
+                                <span className="hidden md:inline text-sm font-medium">
+                                    {user.name}
+                                </span>
+                                {open ? <ChevronDown className="w-4 h-4 transform rotate-180" /> : <ChevronDown className='w-4 h-4' />}
+                            </button>
 
                         {/* Dropdown menu (click to toggle) */}
                         <div
@@ -163,10 +173,10 @@ const Header = () => {
                                 }
                             </div>
                         </div>
+                        </div>
                     </div>
-                </div>
-            )
-            }
+                )}
+            </div>
         </nav>
     )
 }

@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Sora:wght@400;500;600&display=swap');
+
+.ha-page {
+  --ha-bg: #f2f6fb;
+  --ha-panel: rgba(255, 255, 255, 0.9);
+  --ha-text: #0f172a;
+  --ha-muted: #475569;
+  --ha-accent: #0079c2;
+  --ha-accent-2: #00a3ff;
+  --ha-line: rgba(15, 23, 42, 0.11);
+  position: relative;
+  min-height: 100vh;
+  padding: 24px 14px 40px;
+  background: radial-gradient(circle at 15% 10%, #dff5ff 0%, transparent 42%),
+    radial-gradient(circle at 84% 82%, #ffe8d7 0%, transparent 34%),
+    linear-gradient(180deg, var(--ha-bg), #eef4ff 58%, #f8fafc 100%);
+  overflow: hidden;
+}
+
+.ha-bg-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(48px);
+  z-index: 0;
+  opacity: 0.34;
+  pointer-events: none;
+  animation: ha-orb-float 12s ease-in-out infinite;
+}
+
+.ha-bg-orb-a {
+  width: 240px;
+  height: 240px;
+  background: #00a3ff;
+  top: -80px;
+  right: -60px;
+}
+
+.ha-bg-orb-b {
+  width: 220px;
+  height: 220px;
+  background: #ff8c42;
+  left: -50px;
+  bottom: -70px;
+  animation-delay: -4s;
+}
+
+.ha-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ha-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  animation: ha-enter 280ms ease-out;
+}
+
+.ha-pill {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #075985;
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.ha-title {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+  line-height: 1.1;
+  color: var(--ha-text);
+}
+
+.ha-subtitle {
+  max-width: 720px;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.97rem;
+  color: var(--ha-muted);
+}
+
+.ha-step-list {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.82rem;
+  color: #0f172a;
+}
+
+.ha-step-list span {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.ha-secondary-btn,
+.ha-primary-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+}
+
+.ha-secondary-btn {
+  text-decoration: none;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--ha-line);
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.ha-secondary-btn:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.ha-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ha-card {
+  background: var(--ha-panel);
+  border: 1px solid var(--ha-line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: ha-enter 350ms ease-out;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.ha-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12);
+}
+
+.ha-card-title {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  color: var(--ha-text);
+}
+
+.ha-card-note {
+  margin-top: 5px;
+  margin-bottom: 14px;
+  color: var(--ha-muted);
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+}
+
+.ha-upload-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.ha-upload-box {
+  border: 1px dashed #7dd3fc;
+  border-radius: 14px;
+  background: rgba(239, 246, 255, 0.75);
+  padding: 12px;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.ha-upload-box:hover {
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(14, 116, 144, 0.08);
+}
+
+.ha-upload-title {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #0c4a6e;
+  font-size: 0.88rem;
+}
+
+.ha-file {
+  width: 100%;
+  font-family: 'Sora', sans-serif;
+  color: #0f172a;
+  font-size: 0.84rem;
+}
+
+.ha-preview,
+.ha-upload-placeholder {
+  margin-top: 10px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
+
+.ha-preview {
+  object-fit: cover;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.ha-preview-container {
+  position: relative;
+}
+
+.ha-remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.75);
+  color: white;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.ha-remove-btn:hover {
+  background: rgba(15, 23, 42, 0.95);
+  transform: scale(1.05);
+}
+
+.ha-upload-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.86rem;
+  border: 1px solid rgba(15, 23, 42, 0.11);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.ha-fields {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.ha-input {
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ha-text);
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.ha-input:focus {
+  border-color: var(--ha-accent-2);
+  box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.16);
+}
+
+.ha-primary-btn {
+  width: 100%;
+  margin-top: 12px;
+  border-color: #0069a8;
+  background: linear-gradient(135deg, #0079c2, #00a3ff);
+  color: #ffffff;
+  padding: 11px 12px;
+  cursor: pointer;
+}
+
+.ha-primary-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.ha-primary-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ha-btn-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ha-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  animation: ha-spin 0.9s linear infinite;
+}
+
+.ha-progress {
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 121, 194, 0.2), rgba(0, 163, 255, 0.7), rgba(0, 121, 194, 0.2));
+  background-size: 200% 100%;
+  animation: ha-progress 1.4s ease-in-out infinite;
+}
+
+.ha-env-note {
+  margin-top: 9px;
+  color: #64748b;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.77rem;
+}
+
+.ha-empty-state {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.ha-empty-pulse {
+  width: 110px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 121, 194, 0.1), rgba(0, 121, 194, 0.5), rgba(0, 121, 194, 0.1));
+  background-size: 200% 100%;
+  animation: ha-progress 1.6s ease-in-out infinite;
+}
+
+.ha-empty-state h3 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--ha-text);
+}
+
+.ha-empty-state p {
+  margin: 0;
+  max-width: 320px;
+  font-family: 'Sora', sans-serif;
+  color: var(--ha-muted);
+  font-size: 0.9rem;
+}
+
+.ha-summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ha-score-chip {
+  color: #0c4a6e;
+  background: #dff5ff;
+  border: 1px solid #7dd3fc;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.76rem;
+}
+
+.ha-summary-text {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  color: #1e293b;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.ha-chart-wrap {
+  height: 250px;
+}
+
+.ha-results-card {
+  margin-top: 16px;
+}
+
+.ha-result-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.ha-style-card {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(247, 251, 255, 0.95));
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.ha-style-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 24px rgba(15, 23, 42, 0.12);
+}
+
+.ha-style-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ha-style-head h3 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.03rem;
+  color: #0f172a;
+}
+
+.ha-style-head span {
+  color: #0079c2;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.86rem;
+}
+
+.ha-style-why {
+  margin-top: 7px;
+  margin-bottom: 9px;
+  font-family: 'Sora', sans-serif;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.ha-style-section {
+  margin-top: 10px;
+}
+
+.ha-style-section h4 {
+  margin: 0 0 5px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.84rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ha-style-section p {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  color: #334155;
+  font-size: 0.88rem;
+}
+
+.ha-list {
+  margin: 0;
+  padding-left: 18px;
+  font-family: 'Sora', sans-serif;
+  color: #334155;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.ha-care-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.ha-care-box {
+  border: 1px solid rgba(15, 23, 42, 0.11);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.ha-care-box h3 {
+  margin: 0 0 7px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.ha-disclaimer {
+  margin-top: 14px;
+  font-family: 'Sora', sans-serif;
+  color: #64748b;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.ha-fade-up {
+  animation: ha-fade-up 380ms ease-out both;
+}
+
+.ha-delay-1 {
+  animation-delay: 80ms;
+}
+
+.ha-delay-2 {
+  animation-delay: 160ms;
+}
+
+.ha-delay-3 {
+  animation-delay: 240ms;
+}
+
+@keyframes ha-enter {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ha-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ha-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ha-progress {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ha-orb-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ha-bg-orb,
+  .ha-card,
+  .ha-fade-up,
+  .ha-style-card,
+  .ha-upload-box,
+  .ha-primary-btn,
+  .ha-spinner,
+  .ha-progress,
+  .ha-empty-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (min-width: 760px) {
+  .ha-page {
+    padding: 28px 26px 48px;
+  }
+
+  .ha-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .ha-upload-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ha-result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ha-care-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
