@@ -97,14 +97,14 @@ const Home = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: 'easeOut' }
+      transition: { duration: 0.9, ease: 'easeOut' }
     }
   }
 
   const stagger = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.2 }
     }
   }
 
@@ -115,7 +115,7 @@ const Home = () => {
       y: 0,
       scale: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.95, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.95, ease: [0.33, 1, 0.46, 1] }
     }
   }
 
@@ -125,7 +125,7 @@ const Home = () => {
       opacity: 1,
       y: 0,
       x: 0,
-      transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' }
+      transition: { duration: 0.9, delay: 0.2, ease: 'easeOut' }
     }
   }
 
