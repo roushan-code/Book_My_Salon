@@ -66,7 +66,7 @@ const Header = () => {
                         <img src={Logo} alt="" loading="lazy" className='w-13 h-10  rounded-full' />
                         <div>
                             <h1 className='text-xl sm:text-2xl font-bold text-[#2f261e]'>Smart </h1>
-                            <p className='text-xs sm:text-sm -mt-1 text-[#334155]'>Saloni</p>
+                            <p className='text-xs sm:text-sm -mt-1 text-[#334155]'>Salonist</p>
                         </div>
                     </div>
                 </Link>
